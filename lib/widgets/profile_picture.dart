@@ -8,13 +8,18 @@ class ProfilePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 140,
+      width: 140,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-      ),
+        color: Colors.black,
+
+      )
+      /*
       child: Image.asset(
         'assets/no_profile.png',
         fit: BoxFit.contain,
-      )
+      )*/
     );
   }
 

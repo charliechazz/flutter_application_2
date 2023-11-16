@@ -14,18 +14,20 @@ class StartScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color.fromRGBO(0, 188, 212, 0.42),
-                Color.fromRGBO(238, 130, 238, 0.23),
-              ],
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromRGBO(0, 188, 212, 0.42),
+                  Color.fromRGBO(238, 130, 238, 0.23),
+                ],
+              ),
             ),
+            height: double.infinity,
+            width: double.infinity,
           ),
-        ),
-        const MainScreen()
+          const MainScreen()
         ]
       ),
     );
@@ -40,41 +42,42 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(25, 20, 0, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 200,
-          ),
-          const Text(
-            "Mnemosine",
-            style: TextStyle(
-              fontSize: 50,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 10,
-              color: Colors.white,
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 200,
             ),
-          ),
-          const SizedBox(
-            height: 160,
-          ),
-          BotonPersonalizado(
-            text: 'Log In', 
-            evento:(){
-              appRouter.pushNamed('login_screen');
-            }
-          ),
-          BotonPersonalizado(
-            text: 'Sign Up', 
-            evento:(){
-              appRouter.pushNamed('register_screen');
-            }
-          ),
-          const SizedBox(
-            height: 160,
-          ),
-        ],
+            const Text(
+              "Mnemosine",
+              style: TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 10,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 160,
+            ),
+            BotonPersonalizado(
+              text: 'Log In', 
+              evento:(){
+                appRouter.pushNamed('login_screen');
+              }
+            ),
+            BotonPersonalizado(
+              text: 'Sign Up', 
+              evento:(){
+                appRouter.pushNamed('register_screen');
+              }
+            ),
+            const SizedBox(
+              height: 160,
+            ),
+          ],
+        ),
       ),
     );
   }
