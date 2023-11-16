@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/widgets/register_widgets/register_name_custom_textfield.dart';
+import 'package:flutter_application_2/widgets/register_widgets/register_password_custom_textfield.dart';
 
+import '../../routes/routes.dart';
 import '../../widgets/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -33,7 +36,7 @@ class RegisterScreen extends StatelessWidget {
 }
 
 class _Register extends StatelessWidget {
-  final TextEditingController userTextController = TextEditingController();
+  final TextEditingController nameTextController = TextEditingController();
   final TextEditingController emailTextController = TextEditingController();
   final TextEditingController ageTextController = TextEditingController();
   final TextEditingController medicTextController = TextEditingController();
@@ -41,15 +44,40 @@ class _Register extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 200,
+            const SizedBox(
+              height: 100,
             ),
-            ProfilePicture(),
+            const ProfilePicture(),
+            const SizedBox(
+              height: 35,
+            ),
+            NameCustomTextField(textControl: nameTextController),
+            const SizedBox(
+              height: 35,
+            ),
+            EmailCustomTextField(textControl: emailTextController),
+            const SizedBox(
+              height: 35,
+            ),
+            AgeCustomTextField(controler: ageTextController),
+            RegisterPasswordCustomTextField(controller: passwordTextController),
+            const SizedBox(
+              height: 20,
+            ),
+            BotonPersonalizado(
+              text: 'Sign In', 
+              evento:(){
+                appRouter.pushNamed('menu_screen');
+              }
+            ),
+            const SizedBox(
+              height: 160,
+            ),
           ],
         ),
       ),
