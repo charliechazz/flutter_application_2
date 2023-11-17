@@ -22,6 +22,4 @@ class ProfilePicture extends StatelessWidget {
       )*/
     );
   }
-
-  
 }

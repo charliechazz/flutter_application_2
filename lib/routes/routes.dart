@@ -1,3 +1,4 @@
+
 import 'package:flutter_application_2/screens/screens.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,5 +22,10 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
     path: '/register_screen',
     name: RegisterScreen.name,
     builder: (context, state) => const RegisterScreen(),
+  ),
+  GoRoute(
+    path: '/transition_screen',
+    name: TransitionScreen.name,
+    builder: (context, state) => TransitionScreen(type: state.extra as int ),
   ),
 ]);

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/routes/routes.dart';
 
 class CustomIconButton extends StatelessWidget {
-  final String
-      imagePath; // Cambié IconData por String para la ruta de la imagen
+  final String imagePath; // Cambié IconData por String para la ruta de la imagen
   final String buttonText;
+  final Function() evento;
 
   const CustomIconButton({
     Key? key,
     required this.imagePath,
-    required this.buttonText,
+    required this.buttonText, 
+    required this.evento,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        // Acción a realizar cuando se presiona el botón
-      },
+      onPressed: evento,
       style: ElevatedButton.styleFrom(
         foregroundColor: const Color.fromARGB(0, 255, 255, 255),
         backgroundColor: const Color.fromARGB(0, 255, 255, 255),
@@ -36,6 +36,7 @@ class CustomIconButton extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             buttonText,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -50,7 +51,7 @@ class CustomIconButton extends StatelessWidget {
 }
 
 class MenuScreen extends StatelessWidget {
-  const MenuScreen({Key? key});
+  const MenuScreen({super.key,});
   static const String name = "menu_screen";
   @override
   Widget build(BuildContext context) {
@@ -66,43 +67,54 @@ class MenuScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 100,
-              ),
-              Text(
-                "MENU",
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 20,
-                  color: Colors.white,
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 100,
                 ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              CustomIconButton(
-                imagePath:
-                    'assets/calendar-with-a-clock-time-tools_icon-icons.com_56831.png',
-                buttonText: 'CALENDARIO',
-              ),
-              SizedBox(height: 50),
-              CustomIconButton(
-                imagePath:
-                    'assets/976605-appliances-console-controller-dualshock-gamepad-games-videogame_106553.png',
-                buttonText: 'EJERCITA TU MEMORIA',
-              ),
-              SizedBox(height: 50),
-              CustomIconButton(
-                imagePath: 'assets/events_icon_150288.png',
-                buttonText: 'EVENTOS',
-              ),
-              SizedBox(height: 50),
-            ],
+                const Text(
+                  "MENU",
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                CustomIconButton(
+                  imagePath:
+                      'assets/calendar-with-a-clock-time-tools_icon-icons.com_56831.png',
+                  buttonText: 'CALENDARIO',
+                  evento: () {
+                    appRouter.pushNamed('transition_screen',extra: 1);
+                  },
+                ),
+                const SizedBox(height: 50),
+                CustomIconButton(
+                  imagePath:
+                      'assets/976605-appliances-console-controller-dualshock-gamepad-games-videogame_106553.png',
+                  buttonText: 'EJERCITA TU MEMORIA',
+                  evento: () {
+                    appRouter.pushNamed('transition_screen',extra: 2);
+                  },
+                ),
+                const SizedBox(height: 50),
+                CustomIconButton(
+                  imagePath: 'assets/events_icon_150288.png',
+                  buttonText: 'EVENTOS',
+                  evento: () {
+                    appRouter.pushNamed('transition_screen',extra: 3);
+                  },
+                ),
+                const SizedBox(height: 50),
+              ],
+            ),
           ),
         ),
       ),
