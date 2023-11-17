@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/widgets/register_widgets/register_name_custom_textfield.dart';
 import 'package:flutter_application_2/widgets/register_widgets/register_password_custom_textfield.dart';
+import 'package:flutter_application_2/widgets/register_widgets/register_sickness_custom_textfield.dart';
 
 import '../../routes/routes.dart';
 import '../../widgets/widgets.dart';
@@ -64,7 +65,14 @@ class _Register extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
-            AgeCustomTextField(controler: ageTextController),
+            AgeCustomTextField(textControl: ageTextController),
+            const SizedBox(
+              height: 20,
+            ),
+            SicknessCustomTextField(textControl: medicTextController),
+            const SizedBox(
+              height: 20,
+            ),
             RegisterPasswordCustomTextField(controller: passwordTextController),
             const SizedBox(
               height: 20,
