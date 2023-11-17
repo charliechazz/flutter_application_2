@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/routes/routes.dart';
-import 'package:flutter_application_2/widgets/login_widgets/login_user_custom_textfield.dart';
-import 'package:flutter_application_2/widgets/login_widgets/login_password_custom_textfield.dart';
 
 import '../../widgets/widgets.dart';
 

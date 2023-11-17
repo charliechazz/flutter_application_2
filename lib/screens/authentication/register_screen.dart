@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/widgets/register_widgets/register_name_custom_textfield.dart';
-import 'package:flutter_application_2/widgets/register_widgets/register_password_custom_textfield.dart';
-import 'package:flutter_application_2/widgets/register_widgets/register_sickness_custom_textfield.dart';
 
 import '../../routes/routes.dart';
 import '../../widgets/widgets.dart';
@@ -36,12 +33,23 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-class _Register extends StatelessWidget {
+class _Register extends StatefulWidget {
+  @override
+  State<_Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<_Register> {
   final TextEditingController nameTextController = TextEditingController();
+
   final TextEditingController emailTextController = TextEditingController();
+
   final TextEditingController ageTextController = TextEditingController();
+
   final TextEditingController medicTextController = TextEditingController();
+
   final TextEditingController passwordTextController = TextEditingController(); 
+
+  bool termsAndServices = false;
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +84,10 @@ class _Register extends StatelessWidget {
             RegisterPasswordCustomTextField(controller: passwordTextController),
             const SizedBox(
               height: 20,
+            ),
+            const CustomCheckbox(message:'  Aceptar términos y condiciones'),
+            const SizedBox(
+              height: 25,
             ),
             BotonPersonalizado(
               text: 'Sign In', 
