@@ -28,4 +28,19 @@ final appRouter = GoRouter(initialLocation: '/', routes: [
     name: TransitionScreen.name,
     builder: (context, state) => TransitionScreen(type: state.extra as int ),
   ),
+  GoRoute(
+    path: '/main_calendar_screen',
+    name: CalendarMainScreen.name,
+    builder: (context, state) => const CalendarMainScreen(),
+  ),
+  GoRoute(
+    path: '/game1_screen',
+    name: Game1Screen.name,
+    builder: (context, state) => const Game1Screen(),
+  ),
+  GoRoute(
+    path: '/event_screen',
+    name: EventScreen.name,
+    builder: (context, state) => const EventScreen(),
+  ),
 ]);
