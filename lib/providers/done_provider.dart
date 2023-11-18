@@ -1,3 +1,3 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final streamProvider = StateProvider((ref) => false);
+final streamProvider = StateProvider((ref) => '');
