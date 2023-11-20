@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/widgets/menu_widgets/custom_icon_container.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 import '../../routes/routes.dart';
+import '../../widgets/widgets.dart';
 
-class TransitionScreen extends ConsumerWidget {
+class TransitionScreen extends StatelessWidget {
   static String name = 'transition_screen';
   final int type;
   const TransitionScreen({
@@ -14,7 +14,7 @@ class TransitionScreen extends ConsumerWidget {
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     String url = "test";
     late String title;
     late List<Color> gradient;

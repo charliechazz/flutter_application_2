@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 class BotonPersonalizado extends StatelessWidget {
   final String text;
   final Function() evento;
+  final Color color;
 
   const BotonPersonalizado({
     super.key, 
     required this.text, 
-    required this.evento
+    required this.color,
+    required this.evento 
   });
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: evento,
-      color: const Color.fromRGBO(236, 255, 195, 1),
+      color: color,
       minWidth: 200.0,
       height: 40.0,
       shape: RoundedRectangleBorder(

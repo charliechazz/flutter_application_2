@@ -8,3 +8,4 @@ export 'package:flutter_application_2/widgets/register_widgets/register_sickness
 export 'package:flutter_application_2/widgets/custom_checkbox.dart';
 export 'package:flutter_application_2/widgets/login_widgets/login_user_custom_textfield.dart';
 export 'package:flutter_application_2/widgets/login_widgets/login_password_custom_textfield.dart';
+export 'package:flutter_application_2/widgets/menu_widgets/custom_icon_container.dart';

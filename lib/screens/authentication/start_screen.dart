@@ -63,12 +63,14 @@ class MainScreen extends StatelessWidget {
             ),
             BotonPersonalizado(
               text: 'Log In', 
+              color: const Color.fromRGBO(236, 255, 195, 1),
               evento:(){
                 appRouter.pushNamed('login_screen');
               }
             ),
             BotonPersonalizado(
               text: 'Sign Up', 
+              color: const Color.fromRGBO(236, 255, 195, 1),
               evento:(){
                 appRouter.pushNamed('register_screen');
               }

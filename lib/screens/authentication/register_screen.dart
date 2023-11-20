@@ -91,6 +91,7 @@ class _RegisterState extends State<_Register> {
             ),
             BotonPersonalizado(
               text: 'Sign In', 
+              color: const Color.fromRGBO(236, 255, 195, 1),
               evento:(){
                 appRouter.pushNamed('menu_screen');
               }

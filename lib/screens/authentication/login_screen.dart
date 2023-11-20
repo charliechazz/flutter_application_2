@@ -62,6 +62,7 @@ class _LogIn extends StatelessWidget {
             ),
             BotonPersonalizado(
               text: 'Iniciar sesión', 
+              color: const Color.fromRGBO(236, 255, 195, 1),
               evento:(){
                 appRouter.pushNamed('menu_screen');
               }
